@@ -32,3 +32,21 @@ export async function markAsRead(id: string): Promise<void> {
 }
 
 // TODO(intern): Add clearAllNotifications method
+export async function clearAllNotifications(): Promise<void> {
+  await delay();
+  mockNotifications = [];
+}
+
+export async function addMockNotification(): Promise<void> {
+  await delay();
+
+  const newNotification: Notification = {
+    id: `n-${Date.now()}`,
+    title: "New Activity",
+    message: "A new activity has been detected in your project.",
+    read: false,
+    createdAt: new Date().toISOString(),
+  };
+
+  mockNotifications.unshift(newNotification);
+}
