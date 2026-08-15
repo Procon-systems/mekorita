@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { getProjects, Project } from "@/lib/mock-api/projects"
-import { ProjectCard } from "@/components/shared/project-card"
+import { KanbanBoard } from "@/components/projects/kanban-board"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -66,11 +66,7 @@ export default function ProjectsPage() {
           </Button>
         </div>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <KanbanBoard projects={projects} />
       )}
     </div>
   )
