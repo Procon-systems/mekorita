@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Bell, Search, Moon, Sun } from "lucide-react"
+import { CommandPalette } from "@/components/shared/command-palette"
 import { useTheme } from "next-themes"
 import { useAuth } from "@/hooks/use-auth"
 import { useEffect, useState } from "react"
@@ -94,6 +95,7 @@ export function AppHeader() {
           </Button>
         </div>
       </div>
+      <CommandPalette />
     </header>
   )
 }
