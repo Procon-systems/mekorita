@@ -10,7 +10,7 @@ This document outlines the planned features for Mekorita. These items will be br
 
 ## Phase 2: Core Modules
 - [x] **Notifications Center**: Real-time alerts and activity feeds.
-- [ ] **Task Management**: Personal task lists and assignments.
+- [x] **Task Management**: Personal task lists and assignments.
 - [ ] **Kanban Boards**: Drag-and-drop project boards (using `dnd-kit`).
 - [ ] **Global Search**: Command palette (`cmd+k`) for quick navigation.
 

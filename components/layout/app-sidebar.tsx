@@ -9,7 +9,8 @@ import {
   Settings,
   Bell,
   Box,
-  FileText
+  FileText,
+  ListTodo
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -17,6 +18,7 @@ import { cn } from "@/lib/utils"
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Projects", href: "/projects", icon: FolderKanban },
+  { name: "Tasks", href: "/tasks", icon: ListTodo },
   { name: "Teams", href: "/teams", icon: Users },
   { name: "Profile", href: "/profile", icon: Settings },
 ]
