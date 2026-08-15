@@ -1,5 +1,5 @@
 "use client"
-
+import { CommandPalette } from "@/components/shared/command-palette"
 import { Bell, Search, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useAuth } from "@/hooks/use-auth"
@@ -62,6 +62,7 @@ export function AppHeader() {
           </Button>
         </div>
       </div>
+      <CommandPalette />
     </header>
   )
 }
