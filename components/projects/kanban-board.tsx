@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DndContext,
   DragEndEvent,
@@ -147,6 +147,10 @@ function KanbanColumn({
 export function KanbanBoard({ projects }: KanbanBoardProps) {
   const [projectList, setProjectList] = useState(projects);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    setProjectList(projects);
+  }, [projects]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
