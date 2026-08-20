@@ -7,9 +7,8 @@ import {
   FolderKanban,
   Users,
   Settings,
-  Bell,
-  Box,
-  FileText
+  FileText,
+  BarChart3
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -18,6 +17,7 @@ const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Projects", href: "/projects", icon: FolderKanban },
   { name: "Teams", href: "/teams", icon: Users },
+  { name: "Insights", href: "/insights", icon: BarChart3 },
   { name: "Profile", href: "/profile", icon: Settings },
 ]
 
