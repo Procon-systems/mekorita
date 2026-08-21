@@ -19,6 +19,7 @@ const navigation = [
   { name: "Teams", href: "/teams", icon: Users },
   { name: "Insights", href: "/insights", icon: BarChart3 },
   { name: "Profile", href: "/profile", icon: Settings },
+  { name: "Settings", href: "/settings", icon: Settings },
 ]
 
 export function AppSidebar() {
