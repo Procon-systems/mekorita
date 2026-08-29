@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { useAuth } from "@/hooks/use-auth"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -8,7 +9,10 @@ import { Badge } from "@/components/ui/badge"
 import { Mail, MapPin, Building, Link as LinkIcon, Edit2, Globe } from "lucide-react"
 
 export default function ProfilePage() {
-  const { user } = useAuth()
+  const { user, updateUser } = useAuth()
+const [isEditing, setIsEditing] = useState(false)
+const [name, setName] = useState(user?.name || "")
+const [role, setRole] = useState(user?.role || "")
 
   if (!user) return null
 
@@ -28,11 +32,51 @@ export default function ProfilePage() {
             <h1 className="text-3xl font-bold tracking-tight">{user.name}</h1>
             <p className="text-xl text-muted-foreground">{user.role}</p>
           </div>
-          <Button variant="outline" className="shrink-0 gap-2">
-            <Edit2 className="h-4 w-4" />
-            Edit Profile
-          </Button>
+          <Button
+  variant="outline"
+  className="shrink-0 gap-2"
+  onClick={() => setIsEditing(!isEditing)}
+>
+  <Edit2 className="h-4 w-4" />
+  {isEditing ? "Cancel" : "Edit Profile"}
+</Button>
         </div>
+        {isEditing && (
+  <Card className="mb-6">
+    <CardHeader>
+      <CardTitle>Edit Profile</CardTitle>
+    </CardHeader>
+
+    <CardContent className="space-y-4">
+      <div>
+        <label className="text-sm font-medium">Name</label>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="text-sm font-medium">Role</label>
+        <input
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm"
+        />
+      </div>
+
+      <Button
+        onClick={() => {
+          updateUser({ name, role })
+          setIsEditing(false)
+        }}
+      >
+        Save Changes
+      </Button>
+    </CardContent>
+  </Card>
+)}
 
         <div className="grid gap-6 md:grid-cols-3">
           <div className="space-y-6">
