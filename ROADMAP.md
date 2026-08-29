@@ -18,3 +18,7 @@ This document outlines the planned features for Mekorita. These items will be br
 - [x] **Documentation Wiki**: Rich markdown editor for internal docs.
 - [x] **Insights Dashboard**: Engineering metrics and velocity charts (using Recharts).
 - [x] **Settings & Preferences**: User profiles and workspace configuration.
+
+## Phase 4: Polish & Experience
+- [ ] **Interactive Landing Page**: Fully scroll-interactive landing page using `GSAP` and `Lenis` for smooth, cinematic scroll animations.
+- [ ] **Dark Mode**: System-aware dark/light theme toggle with persistent user preference (using `next-themes`).
